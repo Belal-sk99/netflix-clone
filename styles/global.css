@@ -1,0 +1,48 @@
+:root {
+  --nf-red: #e50914;
+  --nf-red-hover: #c11119;
+  --nf-black: #000000;
+  --nf-bg: #141414;
+  --nf-card: #2d2d2d;
+  --nf-card-hover: #3a3a3a;
+  --nf-border: #404040;
+  --nf-white: #ffffff;
+  --nf-gray: #737373;
+  --nf-light-gray: #b3b3b3;
+  --nf-text: #ffffff;
+  --nf-text-muted: #b3b3b3;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--nf-black);
+  color: var(--nf-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
