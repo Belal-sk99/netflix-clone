@@ -10,11 +10,11 @@ A clone of the [Netflix](https://www.netflix.com/) landing experience, built wit
 
 ## Pages
 
-| Page         | Owner                          | Description                                              |
-| ------------ | ------------------------------ | -------------------------------------------------------- |
-| Landing Page | Belal Elkahlout & Nesma Lubbad | Hero section, trending carousel, features, FAQ accordion |
-| Page 3       | Ahmed Hammad                   | _TBD_                                                    |
-| Page 4       | Rana Abu Shaar                 | _TBD_                                                    |
+| Page                         | Owner                          |
+| ---------------------------- | ------------------------------ |
+| Landing Page                 | Belal Elkahlout & Nesma Lubbad |
+| Movie Details                | Ahmed Hammad                   |
+| Authenticated Home + my list | Rana Abu Shaar                 |
 
 ## Features
 
