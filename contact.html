@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2023.ico" type="image/x-icon" />
+    <title>Contact Us - Netflix Help Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <script src="scripts/contact.js" defer></script>
+</head>
+
+<body class="light-mode">
+
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo-area">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix"
+                    class="logo">
+                <span class="divider">|</span>
+                <span class="help-title">Help Center</span>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" title="Toggle Dark/Light Mode">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+                <button class="btn btn-outline">Join Netflix</button>
+                <a href="sign.html"><button class="btn btn-red">Sign In</button></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Contact us</h1>
+            <p>Tell us more and we'll find the best solution for you</p>
+
+            <div class="search-box">
+                <input type="text" placeholder="Describe your issue">
+                <button class="search-btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="quick-links">
+            <h2>Quick Links</h2>
+            <div class="links-list">
+                <div class="link-item">
+                    <div class="icon-wrap"><i class="fa-solid fa-lock"></i></div>
+                    <a href="#">Reset password</a>
+                </div>
+                <div class="link-item">
+                    <div class="icon-wrap"><i class="fa-regular fa-envelope"></i></div>
+                    <a href="#">Update email</a>
+                </div>
+                <div class="link-item">
+                    <div class="icon-wrap"><i class="fa-regular fa-circle-question"></i></div>
+                    <a href="#">Get help signing in</a>
+                </div>
+                <div class="link-item">
+                    <div class="icon-wrap"><i class="fa-regular fa-credit-card"></i></div>
+                    <a href="#">Update payment method</a>
+                </div>
+                <div class="link-item">
+                    <div class="icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
+                    <a href="#">Request TV shows or movies</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="lang-selection">
+                <select id="language-picker">
+                    <option value="">Select a language</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh-s">Chinese (Simplified)</option>
+                    <option value="en" selected>English</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="hi">Hindi</option>
+                    <option value="pt-br">Portuguese (Brazil)</option>
+                    <option value="ru">Russian</option>
+                    <option value="es-es">Spanish (Spain)</option>
+                </select>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Corporate Information</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

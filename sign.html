@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2023.ico" type="image/x-icon" />
+    <title>Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/sign.css">
+    <script src="scripts/sign.js" defer></script>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo"
+            class="logo">
+        <button id="themeToggle" class="theme-btn">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+    </header>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h1>Enter your info to sign in</h1>
+            <p class="subtitle">Or get started with a new account.</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="user_info" required>
+                    <label for="user_info">Email or mobile number</label>
+                </div>
+
+                <button type="submit" class="btn-continue">Continue</button>
+            </form>
+
+            <div class="get-help-section">
+                <div class="help-header" id="helpToggle">
+                    <span>Get Help</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow"></i>
+                </div>
+                <div class="help-links" id="helpLinks">
+                    <a href="#">Forgot email or mobile number?</a>
+                    <a href="#">Learn more about sign-in</a>
+                </div>
+            </div>
+
+            <p class="recaptcha-text">
+                This page is protected by Google reCAPTCHA to ensure you're not a bot.
+            </p>
+        </div>
+    </main>
+
+    <footer class="custom-footer">
+        <div class="footer-container">
+            <p class="footer-top"> <a href="contact.html">Questions?Contact us.</a></p>
+
+            <ul class="footer-links">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Corporate Information</a></li>
+            </ul>
+
+            <div class="lang-selection-container">
+                <div class="lang-wrapper">
+                    <i class="fa-solid fa-language lang-icon"></i>
+                    <select class="lang-select">
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                    <i class="fa-solid fa-caret-down dropdown-arrow"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
