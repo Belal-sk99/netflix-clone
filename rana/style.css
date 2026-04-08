@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #000 0%, #0b0b0f 25%, #141414 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 36px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), transparent);
+    position: sticky;
+    top: 0;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+.menu a,
+.nav-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.nav-right a:hover {
+    color: #b3b3b3;
+}
+
+.profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #2a7fff;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.content {
+    padding: 20px 36px 40px;
+}
+
+.row-section {
+    margin-bottom: 34px;
+}
+
+.row-section h2 {
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 4px;
+    background: #222;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* زر الإضافة */
+.add-btn {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+/* يظهر فقط عند hover */
+.card:hover .add-btn {
+    opacity: 1;
+}
+
+
+.add-btn.added {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+
+.add-btn:disabled {
+    pointer-events: none;
+}
+
+.add-btn:hover {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+.empty-home-list {
+    color: #b3b3b3;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.saved-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.saved-card:hover .card-info {
+    opacity: 1;
+}
+
+.card-info h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 12px;
+    color: #ccc;
+}
+
+
+.remove-home-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.saved-card:hover .remove-home-btn {
+    opacity: 1;
+}
+
+.remove-home-btn:hover {
+    background: #e50914;
+}
