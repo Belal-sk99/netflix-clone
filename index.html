@@ -8,170 +8,191 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2023.ico" type="image/x-icon" />
     <title>Netflix Clone</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "nf-red": "#E50914",
-                        "nf-red-hover": "#C11119",
-                        "nf-black": "#000000",
-                        "nf-bg": "#141414",
-                        'nf-card': '#192133',
-                        'nf-card-hover': '#1F2A3D',
-                        "nf-border": "#404040",
-                        "nf-gray": "#ffffffb3",
-                        "nf-light-gray": "#B3B3B3",
-                    },
-                },
-            },
-        };
-    </script>
+    <script src="scripts/main.js" defer></script>
 </head>
 
-<body class="px-40">
-    <section class="flex flex-col">
-        <div class="absolute z-[-1] inset-0 bg-cover bg-center" style="
-          background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/fc9ebadf-d77a-4f9b-a0dd-499af5178dc5/web/US-en-20260330-TRIFECTA-perspective_3147c9af-854a-4ea1-9628-7de0a1750468_large.jpg);
-        "></div>
-        <div class="z-[-1] absolute inset-0 bg-gradient-to-b from-nf-black/80 via-nf-black/60 to-nf-black"></div>
+<body class="px-30">
+    <section class="relative min-h-[700px] flex flex-col px-6 md:px-40 overflow-hidden text-white">
+        <div class="absolute z-[-2] inset-0 bg-cover bg-center"
+            style="background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/fc9ebadf-d77a-4f9b-a0dd-499af5178dc5/web/US-en-20260330-TRIFECTA-perspective_3147c9af-854a-4ea1-9628-7de0a1750468_large.jpg');">
+        </div>
+        <div class="absolute z-[-1] inset-0 bg-black/60 bg-gradient-to-t from-black via-transparent to-black/70"></div>
 
-        <nav class="flex items-center justify-between py-6 bg-transparent">
+        <nav class="flex items-center justify-between py-6 bg-transparent relative z-50">
             <a href="index.html">
-                <h3 class="text-primary text-5xl text-nf-red font-bold tracking-wider">NETFLIX</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix"
+                    class="w-32 md:w-40 h-auto">
             </a>
-            <div class="flex items-center gap-3">
 
-                <select
-                    class="bg-nf-bg text-white border border-nf-border rounded py-2 px-6 text-sm hover:border-nf-light-gray cursor-pointer font-bold">
-                    <option class="bg-nf-bg"> English </option>
-                    <option class="bg-nf-bg"> Arabic </option>
-                </select>
-                <a href="#"
-                    class="bg-nf-red hover:bg-nf-red-hover text-white font-bold px-4 py-1.5 rounded transition-colors">Sign
-                    In</a>
+            <div class="flex items-center gap-4">
+
+
+                <div class="relative flex items-center">
+
+                    <span class="absolute left-3 pointer-events-none text-white text-xs">
+                        <i class="fa-solid fa-language text-lg"></i> 
+                    </span>
+
+                    <select
+                        class="appearance-none bg-black/40  border border-gray-500 rounded-[4px] py-1.5 pl-9 pr-8 text-sm font-medium hover:ring-1 hover:ring-white cursor-pointer outline-none">
+                        <option class="bg-gray-800">English</option>
+                        <option class="bg-gray-800">العربية</option>
+                    </select>
+
+                    <span class="absolute right-3 pointer-events-none text-[10px]">▼</span>
+                </div>
+                <button id="theme-toggle"
+                    class="bg-black/40 text-white border border-gray-500 rounded px-3 py-1 text-sm font-bold hover:bg-white hover:text-black transition-all">
+                    Light Mode
+                </button>
+                <a href="sign.html"
+                    class="bg-[#E50914] hover:bg-[#C11119] text-white text-sm font-bold px-4 py-1.5 rounded-[4px] transition-colors">
+                    Sign In
+                </a>
             </div>
         </nav>
 
-        <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-            <div class="relative z-10 text-center max-w-3xl mx-auto px-4 pt-16">
-                <h1 class="text-6xl font-extrabold mb-4 leading-tight">
-                    Unlimited movies, TV shows, and more
-                </h1>
-                <p class="text-xl mb-5 font-bold">
-                    Starts at USD 3.99. Cancel anytime.
-                </p>
-                <p class="mb-4 ">
-                    Ready to watch? Enter your email to create or restart your
-                    membership.
-                </p>
-                <div class="flex items-center justify-center gap-3 mx-auto">
-                    <div class="relative flex-1 w-full">
-                        <input type="email" placeholder="Email address"
-                            class="bg-transparent border border-nf-gray rounded text-white transition-colors duration-200 focus:border-white focus:border-[.2rem] outline-none placeholder:text-nf-gray w-full px-4 py-4 text-lg" />
-                    </div>
-                    <button
-                        class="bg-nf-red hover:bg-nf-red-hover text-white text-2xl font-bold px-8 py-4 rounded flex items-center gap-2 transition-colors whitespace-nowrap">
-                        Get Started
-                        <svg viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightMedium"
-                            data-icon-id=":r4:" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            role="img">
-                            <path fill="currentColor" fill-rule="evenodd"
-                                d="m15.586 12-7.293 7.293 1.414 1.414 8-8a1 1 0 0 0 0-1.414l-8-8-1.414 1.414z"
-                                clip-rule="evenodd">
-                            </path>
-                        </svg>
-                    </button>
+        <div class="flex-1 flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+                Unlimited movies, TV shows, and more
+            </h1>
+            <p class="text-xl md:text-2xl font-medium mb-6">
+                Starts at USD 3.99. Cancel anytime.
+            </p>
+            <p class="text-lg md:text-xl mb-4">
+                Ready to watch? Enter your email to create or restart your membership.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center gap-2 w-full max-w-2xl">
+                <div class="relative w-full">
+                    <input type="email" placeholder="Email address"
+                        class="w-full bg-black/40 border border-gray-500 rounded-[4px] p-4 text-lg text-white outline-none focus:ring-2 focus:ring-white transition-all placeholder:text-gray-400">
                 </div>
-            </div>
-            <div
-                class="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-nf-red/40 to-transparent">
+                <button
+                    class="bg-[#E50914] hover:bg-[#C11119] text-white text-2xl font-bold px-8 py-4 rounded-[4px] flex items-center gap-3 whitespace-nowrap transition-colors">
+                    Get Started
+                    <span class="text-xl">❯</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <section class="pt-10 md:pt-16 bg-nf-black">
+    <section class="pt-10 px-6 md:px-40">
         <h2 class="text-xl md:text-2xl font-bold mb-4">Trending Now</h2>
-        <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-4">
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABQzXaGfD-AkdJYI8dTxdVCMHaEKLuB-za_6PRMt6qN8GzCNxzT0rP-njK5RM5nQ3hbyrteXaLslVDxXEs1zhhwV0xq6-piKQwFUOrrkuwBr-omC8vt0Nhx1PCYt1jgkRHmyY.webp?r=3f5"
-                    alt="Trending 1" class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">1</span>
-            </div>
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABfXc88xAzVN2I8OtE5T3D97cKRI8tP6wuy-xxCaJZ0XYA31h2VmDMuL7PqmbGRzOkHykVbLCTdW-z9vK22KMAmX_uX6G2szZnVpTzE6VzdKK3s2H3lvd48Gxr4nXSw8Jgf_E.webp?r=618"
-                    alt="Trending 2" class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">2</span>
-            </div>
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcwMiAXNKvtzgN1Kx06ht1pT-yTXiVSQy0BKogrxRHkSiGZlRtWZbq2ROt1kkWqfM2PWVvgDNFMw73KTzVFP0dnMIY1MsQEVJIeBdS5U2PG52vbiBsX9ajBuOg6ZrWR1H_X-.webp?r=df5"
-                    alt="Trending 3" class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">3</span>
-            </div>
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABT79Mi0iWWtYi-57TpyWlexVfLyGglHcQknKS_qF5RsRxldAflHZj1RiYT6895R-ssNAnKe-QpJV7de--OtapTkh6sGbuDOHCkq0XFA4_KVWvWDCn9_Ff9P-i2cGkBINRLBN.webp?r=09b"
-                    alt="Trending 4" class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">4</span>
-            </div>
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
-                    alt="Trending 5" class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">5</span>
-            </div>
 
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABVXRMk0bw3iiVOQl8rCGNAj0Wqv9MI8NJ9Xcaj5T107UqlMBuVTXxokY34j7w8YLR8w2ZqqE9Q6vPE7XnVag5hVQZbiFHWS2iX4NKlERvYoyhazleAt6nTLo6tdU_h-YaULD.webp?r=2e6"
-                    alt="Trending 6" class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">6</span>
-            </div>
+        <div class="relative group">
 
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://picsum.photos/seed/nfx7/180/270" alt="Trending 7"
-                    class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">7</span>
-            </div>
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://picsum.photos/seed/nfx8/180/270" alt="Trending 8"
-                    class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">8</span>
-            </div>
+            <button id="prevBtn"
+                class="arrow-btn absolute left-0 top-0 bottom-10 z-40 w-12 flex items-center justify-center opacity-0 pointer-events-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
 
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://picsum.photos/seed/nfx9/180/270" alt="Trending 9"
-                    class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">9</span>
-            </div>
+            <div id="scrollContainer" class="flex gap-2 overflow-x-auto scroll-smooth hide-scrollbar pb-10">
 
-            <div
-                class="relative flex-shrink-0 w-[240px] rounded-lg overflow-hidden px-8 py-3 hover:scale-105 transition duration-300 cursor-pointer ">
-                <img src="https://picsum.photos/seed/nfx10/180/270" alt="Trending 10"
-                    class="w-full h-auto object-cover rounded-lg" />
-                <span
-                    class="text-[7rem] font-black leading-none text-nf-black absolute bottom-10 -left-0 [-webkit-text-stroke:2px_white] ">10</span>
-            </div>
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">1</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABQzXaGfD-AkdJYI8dTxdVCMHaEKLuB-za_6PRMt6qN8GzCNxzT0rP-njK5RM5nQ3hbyrteXaLslVDxXEs1zhhwV0xq6-piKQwFUOrrkuwBr-omC8vt0Nhx1PCYt1jgkRHmyY.webp?r=3f5"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
 
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">2</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABfXc88xAzVN2I8OtE5T3D97cKRI8tP6wuy-xxCaJZ0XYA31h2VmDMuL7PqmbGRzOkHykVbLCTdW-z9vK22KMAmX_uX6G2szZnVpTzE6VzdKK3s2H3lvd48Gxr4nXSw8Jgf_E.webp?r=618"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">3</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcwMiAXNKvtzgN1Kx06ht1pT-yTXiVSQy0BKogrxRHkSiGZlRtWZbq2ROt1kkWqfM2PWVvgDNFMw73KTzVFP0dnMIY1MsQEVJIeBdS5U2PG52vbiBsX9ajBuOg6ZrWR1H_X-.webp?r=df5"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">4</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABT79Mi0iWWtYi-57TpyWlexVfLyGglHcQknKS_qF5RsRxldAflHZj1RiYT6895R-ssNAnKe-QpJV7de--OtapTkh6sGbuDOHCkq0XFA4_KVWvWDCn9_Ff9P-i2cGkBINRLBN.webp?r=09b"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">5</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">6</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">7</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">8</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">9</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+                <div
+                    class="relative flex-shrink-0 w-[42%] md:w-[21%] cursor-pointer transition-transform duration-300 hover:scale-105 z-10">
+                    <span class="trending-number">10</span>
+                    <div class="ml-10 md:ml-14 rounded-md overflow-hidden relative z-10 shadow-lg">
+                        <img src="https://occ-0-4490-1490.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYZ5bqeqtOKJ-F_hpaLsJ1pvX5X1tQ0ULofSzrh0JLkMC4rjRXl0OiSq1UPEbB8uJWqFTkcPD2hLLePb304vbP1-bgpDr3mg-3zZk7X5zpr-6EHj7cKPS9tqO54Nb7IZCL0A.webp?r=2ef"
+                            class="w-full h-auto aspect-[2/3] object-cover" />
+                    </div>
+                </div>
+
+            </div>
+            <button id="nextBtn"
+                class="arrow-btn absolute right-0 top-0 bottom-10 z-40 w-12 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
         </div>
     </section>
 
-    <section class="py-10 md:py-16 bg-nf-black">
+
+    <section class="py-10 md:py-16 bg-nf-black px-40">
         <h2 class="text-xl md:text-2xl font-bold mb-6">More Reasons to Join</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div
@@ -243,138 +264,209 @@
         </div>
     </section>
 
-    <section class="py-10 md:py-16 bg-nf-black mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold mb-6">
-            Frequently Asked Questions
-        </h2>
-        <div class="flex flex-col gap-2">
-            <div class="bg-nf-card hover:bg-nf-card-hover transition-colors rounded">
-                <button
-                    class="w-full flex items-center justify-between px-6 py-5 text-left text-base md:text-lg font-normal">
-                    <span>What is Netflix?</span>
-                    <svg class="w-7 h-7 flex-shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" d="M12 5v14M5 12h14" />
-                    </svg>
-                </button>
-            </div>
-            <div class="bg-nf-card hover:bg-nf-card-hover transition-colors rounded">
-                <button
-                    class="w-full flex items-center justify-between px-6 py-5 text-left text-base md:text-lg font-normal">
-                    <span>How much does Netflix cost?</span>
-                    <svg class="w-7 h-7 flex-shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" d="M12 5v14M5 12h14" />
-                    </svg>
-                </button>
-            </div>
-            <div class="bg-nf-card hover:bg-nf-card-hover transition-colors rounded">
-                <button
-                    class="w-full flex items-center justify-between px-6 py-5 text-left text-base md:text-lg font-normal">
-                    <span>Where can I watch?</span>
-                    <svg class="w-7 h-7 flex-shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" d="M12 5v14M5 12h14" />
-                    </svg>
-                </button>
-            </div>
-            <div class="bg-nf-card hover:bg-nf-card-hover transition-colors rounded">
-                <button
-                    class="w-full flex items-center justify-between px-6 py-5 text-left text-base md:text-lg font-normal">
-                    <span>How do I cancel?</span>
-                    <svg class="w-7 h-7 flex-shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" d="M12 5v14M5 12h14" />
-                    </svg>
-                </button>
-            </div>
-            <div class="bg-nf-card hover:bg-nf-card-hover transition-colors rounded">
-                <button
-                    class="w-full flex items-center justify-between px-6 py-5 text-left text-base md:text-lg font-normal">
-                    <span>What can I watch on Netflix?</span>
-                    <svg class="w-7 h-7 flex-shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" d="M12 5v14M5 12h14" />
-                    </svg>
-                </button>
-            </div>
-            <div class="bg-nf-card hover:bg-nf-card-hover transition-colors rounded">
-                <button
-                    class="w-full flex items-center justify-between px-6 py-5 text-left text-base md:text-lg font-normal">
-                    <span>Is Netflix good for kids?</span>
-                    <svg class="w-7 h-7 flex-shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="1.5"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" d="M12 5v14M5 12h14" />
-                    </svg>
-                </button>
+    <section class="bg-black py-20 md:px-10 px-45">
+        <div class="max-w-[1450px] mx-auto">
+            <h2 class="text-white text-2xl md:text-[2rem] font-bold text-left mb-10 tracking-tight">
+                Frequently Asked Questions
+            </h2>
+
+            <div class="flex flex-col gap-[0.5rem]">
+
+
+                <div class="accordion-item">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between px-6 py-[1.5rem] bg-[#2d2d2d] hover:bg-[#414141] transition-colors duration-250 text-white text-left text-xl md:text-[1.7rem] font-normal">
+                        <span>What is Netflix?</span>
+
+                        <svg class="w-12 h-12 transition-transform duration-300 transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 18 18" stroke-width="1">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden bg-[#2d2d2d] transition-all  text-nf-light-gray duration-300 ease-in-out mt-[1px]">
+                        <div
+                            class="px-6 py-8 md:px-8 md:py-10  text-lg md:text-[1.5rem] leading-normal border-t border-black">
+                            Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies,
+                            anime, documentaries, and more on thousands of internet-connected devices. <br><br>
+                            You can watch as much as you want, whenever you want without a single commercial – all for
+                            one low monthly price.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between px-6 py-[1.5rem] bg-[#2d2d2d] hover:bg-[#414141] transition-colors  text-left text-xl md:text-[1.7rem] font-normal">
+                        <span>How much does Netflix cost?</span>
+                        <svg class="w-12 h-12 transition-transform duration-300 transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 18 18" stroke-width="1">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden bg-[#2d2d2d] transition-all duration-300 mt-[1px]">
+                        <div class="px-6 py-8 md:px-8 md:py-10  text-lg md:text-[1.7rem] border-t border-black">
+                            Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one
+                            fixed monthly fee. Plans range from USD 3.99 to USD 9.99/month.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between px-6 py-[1.5rem] bg-[#2d2d2d] hover:bg-[#414141] transition-colors  text-left text-xl md:text-[1.7rem] font-normal">
+                        <span>Where can I watch?</span>
+                        <svg class="w-12 h-12 transition-transform duration-300 transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 18 18" stroke-width="1">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden bg-[#2d2d2d] transition-all duration-300 mt-[1px]">
+                        <div
+                            class="px-6 py-8 md:px-8 md:py-10  text-lg md:text-[1.7rem] border-t border-black leading-snug">
+                            Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at
+                            netflix.com from your personal computer or on any internet-connected device that offers the
+                            Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                            consoles.
+                            <br><br>
+                            You can also download your favorite shows with the iOS or Android app. Use downloads to
+                            watch while you're on the go and without an internet connection. Take Netflix with you
+                            anywhere.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between px-6 py-[1.5rem] bg-[#2d2d2d] hover:bg-[#414141] transition-colors text-white text-left text-xl md:text-[1.7rem] font-normal">
+                        <span>How do I cancel?</span>
+                        <svg class="w-12 h-12 transition-transform duration-300 transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 18 18" stroke-width="1">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden bg-[#2d2d2d] transition-all duration-300 mt-[1px]">
+                        <div class="px-6 py-8 md:px-8 md:py-10  text-lg md:text-[1.7rem] border-t border-black">
+                            Netflix is flexible. You can easily cancel your account online in two clicks. There are no
+                            cancellation fees – start or stop your account anytime.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between px-6 py-[1.5rem] bg-[#2d2d2d] hover:bg-[#414141] transition-colors text-white text-left text-xl md:text-[1.7rem] font-normal">
+                        <span>What can I watch on Netflix?</span>
+                        <svg class="w-12 h-12 transition-transform duration-300 transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 18 18" stroke-width="1">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden bg-[#2d2d2d] transition-all duration-300 mt-[1px]">
+                        <div
+                            class="px-6 py-8 md:px-8 md:py-10  text-lg md:text-[1.7rem] border-t border-black leading-snug">
+                            Netflix has an extensive library of feature films, documentaries, TV shows, anime,
+                            award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between px-6 py-[1.5rem] bg-[#2d2d2d] hover:bg-[#414141] transition-colors text-white text-left text-xl md:text-[1.7rem] font-normal">
+                        <span>Is Netflix good for kids?</span>
+                        <svg class="w-12 h-12 transition-transform duration-300 transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 18 18" stroke-width="1">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden bg-[#2d2d2d] transition-all duration-300 mt-[1px]">
+                        <div
+                            class="px-6 py-8 md:px-8 md:py-10  text-lg md:text-[1.7rem] border-t border-black leading-snug">
+                            The Netflix Kids experience is included in your membership to give parents control while
+                            kids enjoy family-friendly TV shows and movies in their own space.
+                            <br><br>
+                            Kids profiles come with PIN-protected parental controls that let you restrict the maturity
+                            rating of content kids can watch and block specific titles you don't want kids to see.
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="flex flex-col gap-4 pb-4 bg-nf-black text-center py-4">
-        <p class="text-white">
-            Ready to watch? Enter your email to create or restart your membership.
+</html>
+
+<section class="flex flex-col gap-4 pb-4 bg-nf-black text-center py-4">
+    <p class="text-white">
+        Ready to watch? Enter your email to create or restart your membership.
+    </p>
+    <div class="flex items-center justify-center gap-3 px-32">
+        <div class="relative flex-1 w-full">
+            <input type="email" placeholder="Email address"
+                class="bg-transparent border border-nf-gray rounded  transition-colors duration-200 focus:border-white focus:border-[.2rem] outline-none placeholder:text-nf-gray w-full px-4 py-4 text-lg" />
+        </div>
+        <button
+            class="bg-nf-red hover:bg-nf-red-hover  text-2xl font-bold px-8 py-4 rounded flex items-center gap-2 transition-colors whitespace-nowrap">
+            Get Started
+            <svg viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightMedium" data-icon-id=":r4:"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" role="img">
+                <path fill="currentColor" fill-rule="evenodd"
+                    d="m15.586 12-7.293 7.293 1.414 1.414 8-8a1 1 0 0 0 0-1.414l-8-8-1.414 1.414z" clip-rule="evenodd">
+                </path>
+            </svg>
+        </button>
+    </div>
+</section>
+
+<footer class="py-16 bg-nf-black text-nf-gray text-sm border-nf-card [&_a]:underline">
+    <div class="max-w-5xl mx-auto">
+        <a href="contact.html" class="hover:text-white mb-6 block">Questions? Contact us.</a>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <ul class="space-y-3">
+                <li><a href="#" class="hover:text-white">FAQ</a></li>
+                <li><a href="#" class="hover:text-white">Investor Relations</a></li>
+                <li><a href="#" class="hover:text-white">Privacy</a></li>
+                <li><a href="#" class="hover:text-white">Speed Test</a></li>
+            </ul>
+            <ul class="space-y-3">
+                <li><a href="#" class="hover:text-white">Help Center</a></li>
+                <li><a href="#" class="hover:text-white">Jobs</a></li>
+                <li><a href="#" class="hover:text-white">Cookie Preferences</a></li>
+                <li><a href="#" class="hover:text-white">Legal Notices</a></li>
+            </ul>
+            <ul class="space-y-3">
+                <li><a href="#" class="hover:text-white">Account</a></li>
+                <li><a href="#" class="hover:text-white">Ways to Watch</a></li>
+                <li>
+                    <a href="#" class="hover:text-white">Corporate Information</a>
+                </li>
+                <li><a href="#" class="hover:text-white">Only on Netflix</a></li>
+            </ul>
+            <ul class="space-y-3">
+                <li><a href="#" class="hover:text-white">Media Center</a></li>
+                <li><a href="#" class="hover:text-white">Terms of Use</a></li>
+                <li><a href="#" class="hover:text-white">Contact Us</a></li>
+            </ul>
+        </div>
+        <select
+            class="bg-nf-bg text-white border border-nf-border rounded py-2 px-6 text-sm hover:border-nf-light-gray cursor-pointer my-4 font-bold">
+            <option class="bg-nf-bg"> English </option>
+            <option class="bg-nf-bg"> Arabic </option>
+        </select>
+
+        <p class="text-xs text-nf-gray opacity-75 ">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot.
         </p>
-        <div class="flex items-center justify-center gap-3 px-32">
-            <div class="relative flex-1 w-full">
-                <input type="email" placeholder="Email address"
-                    class="bg-transparent border border-nf-gray rounded text-white transition-colors duration-200 focus:border-white focus:border-[.2rem] outline-none placeholder:text-nf-gray w-full px-4 py-4 text-lg" />
-            </div>
-            <button
-                class="bg-nf-red hover:bg-nf-red-hover text-white text-2xl font-bold px-8 py-4 rounded flex items-center gap-2 transition-colors whitespace-nowrap">
-                Get Started
-                <svg viewBox="0 0 24 24" width="24" height="24" data-icon="ChevronRightMedium" data-icon-id=":r4:"
-                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" role="img">
-                    <path fill="currentColor" fill-rule="evenodd"
-                        d="m15.586 12-7.293 7.293 1.414 1.414 8-8a1 1 0 0 0 0-1.414l-8-8-1.414 1.414z"
-                        clip-rule="evenodd">
-                    </path>
-                </svg>
-            </button>
-        </div>
-    </section>
-
-    <footer class="py-16 bg-nf-black text-nf-gray text-sm border-nf-card [&_a]:underline">
-        <div class="max-w-5xl mx-auto">
-            <a href="#" class="hover:text-white mb-6 block">Questions? Contact us.</a>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                <ul class="space-y-3">
-                    <li><a href="#" class="hover:text-white">FAQ</a></li>
-                    <li><a href="#" class="hover:text-white">Investor Relations</a></li>
-                    <li><a href="#" class="hover:text-white">Privacy</a></li>
-                    <li><a href="#" class="hover:text-white">Speed Test</a></li>
-                </ul>
-                <ul class="space-y-3">
-                    <li><a href="#" class="hover:text-white">Help Center</a></li>
-                    <li><a href="#" class="hover:text-white">Jobs</a></li>
-                    <li><a href="#" class="hover:text-white">Cookie Preferences</a></li>
-                    <li><a href="#" class="hover:text-white">Legal Notices</a></li>
-                </ul>
-                <ul class="space-y-3">
-                    <li><a href="#" class="hover:text-white">Account</a></li>
-                    <li><a href="#" class="hover:text-white">Ways to Watch</a></li>
-                    <li>
-                        <a href="#" class="hover:text-white">Corporate Information</a>
-                    </li>
-                    <li><a href="#" class="hover:text-white">Only on Netflix</a></li>
-                </ul>
-                <ul class="space-y-3">
-                    <li><a href="#" class="hover:text-white">Media Center</a></li>
-                    <li><a href="#" class="hover:text-white">Terms of Use</a></li>
-                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
-                </ul>
-            </div>
-            <select
-                class="bg-nf-bg text-white border border-nf-border rounded py-2 px-6 text-sm hover:border-nf-light-gray cursor-pointer my-4 font-bold">
-                <option class="bg-nf-bg"> English </option>
-                <option class="bg-nf-bg"> Arabic </option>
-            </select>
-
-            <p class="text-xs text-nf-gray opacity-75 ">
-                This page is protected by Google reCAPTCHA to ensure you're not a bot.
-            </p>
-        </div>
-    </footer>
+    </div>
+</footer>
 </body>
 
 </html>
