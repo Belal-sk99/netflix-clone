@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Style UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="topbar">
+    <div class="nav-left">
+        <div class="logo">NETFLIX</div>
+        <nav>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="my-list.html">My List</a></li>
+        </ul>
+        </nav>
+    </div>
+
+    <div class="nav-right">
+        <a href="#">🔍</a>
+        <a href="#">KIDS</a>
+        <a href="#">🎁</a>
+        <a href="#">🔔</a>
+        <div class="profile">🙂</div>
+    </div>
+    </header>
+
+    <main class="content">
+    <section class="row-section">
+        <h2>Trending Now</h2>
+        <div class="cards">
+        <div class="card">
+            <img src="images/-trending-movies-india1.jpg" alt="Mrithyunjay" />
+            <button
+            class="add-btn"
+            data-title="Mrithyunjay"
+            data-year="2024"
+            data-age="13+"
+            data-duration="1 Season"
+            data-image="images/-trending-movies-india1.jpg"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/Alone-movie.png" alt="Alone" />
+            <button
+            class="add-btn"
+            data-title="Alone"
+            data-year="2024"
+            data-age="16+"
+            data-duration="1 Season"
+            data-image="images/Alone-movie.png"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/batman-movie.jpg" alt="Batman" />
+            <button
+            class="add-btn"
+            data-title="Batman"
+            data-year="2023"
+            data-age="13+"
+            data-duration="2h 10m"
+            data-image="images/batman-movie.jpg"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/Brave-movie.webp" alt="Brave" />
+            <button
+            class="add-btn"
+            data-title="Brave"
+            data-year="2012"
+            data-age="7+"
+            data-duration="1h 33m"
+            data-image="images/Brave-movie.webp"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/Cave-movie.jpg" alt="300 Rise of an Empire" />
+            <button
+            class="add-btn"
+            data-title="300 Rise of an Empire"
+            data-year="2014"
+            data-age="18+"
+            data-duration="1h 42m"
+            data-image="images/Cave-movie.jpg"
+            >
+            + My List
+            </button>
+        </div>
+        </div>
+    </section>
+
+    <section class="row-section">
+        <h2>US Movies</h2>
+        <div class="cards">
+        <div class="card">
+            <img src="images/fFsbXB.webp" alt="Avatar" />
+            <button
+            class="add-btn"
+            data-title="Avatar"
+            data-year="2009"
+            data-age="13+"
+            data-duration="2h 42m"
+            data-image="images/fFsbXB.webp"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/KungFu-movie.webp" alt="Kung Fu Panda" />
+            <button
+            class="add-btn"
+            data-title="Kung Fu Panda"
+            data-year="2008"
+            data-age="7+"
+            data-duration="1h 32m"
+            data-image="images/KungFu-movie.webp"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/movie-image.avif" alt="Movie 1" />
+            <button
+            class="add-btn"
+            data-title="Movie 1"
+            data-year="2023"
+            data-age="16+"
+            data-duration="1h 55m"
+            data-image="images/movie-image.avif"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/movie-image.jpg" alt="The Thing" />
+            <button
+            class="add-btn"
+            data-title="The Thing"
+            data-year="1982"
+            data-age="18+"
+            data-duration="1h 49m"
+            data-image="images/movie-image.jpg"
+            >
+            + My List
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/movie.jpg" alt="Interstellar" />
+            <button
+            class="add-btn"
+            data-title="Interstellar"
+            data-year="2014"
+            data-age="13+"
+            data-duration="2h 49m"
+            data-image="images/movie.jpg"
+            >
+            + My List
+            </button>
+        </div>
+        </div>
+    </section>
+
+    <section class="row-section">
+        <h2>My List</h2>
+        <div id="homeMyList" class="cards"></div>
+    </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
